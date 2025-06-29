@@ -1,0 +1,28 @@
+{
+  "name": "ppt-agent",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@myriaddreamin/typst-ts-web-compiler": "latest",
+    "@myriaddreamin/typst.ts": "^0.6.1-rc1",
+    "@myriaddreamin/typst.vue3": "^0.6.1-rc1",
+    "highlight.js": "^11.11.1",
+    "localforage": "latest",
+    "marked": "^16.0.0",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@types/marked": "^5.0.2",
+    "@vitejs/plugin-vue": "latest",
+    "gh-pages": "^6.1.1",
+    "typescript": "latest",
+    "vite": "latest",
+    "vue-tsc": "latest"
+  }
+}

@@ -1,0 +1,122 @@
+.home-view {
+  display: grid;
+  grid-template-columns: 400px 1fr 350px;
+  gap: 16px;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.center-panel {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  max-height: 100%;
+}
+
+/* 确保所有子组件都限制高度 */
+.left-panel > *,
+.center-panel > *,
+.right-panel > * {
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.settings-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.settings-button:hover {
+  background-color: #0056b3;
+}
+
+/* 响应式设计 */
+@media (max-width: 1400px) {
+  .home-view {
+    grid-template-columns: 350px 1fr 320px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .home-view {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60% 40%;
+    grid-template-areas: 
+      "left center"
+      "right right";
+  }
+  
+  .left-panel {
+    grid-area: left;
+  }
+  
+  .center-panel {
+    grid-area: center;
+  }
+  
+  .right-panel {
+    grid-area: right;
+    max-height: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-view {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: 
+      "left"
+      "center"
+      "right";
+    height: auto;
+    max-height: none;
+  }
+  
+  .left-panel,
+  .center-panel,
+  .right-panel {
+    grid-area: unset;
+    max-height: 300px;
+  }
+}

@@ -1,0 +1,152 @@
+.settings-dialog {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  min-width: 400px;
+  max-width: 500px;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.settings-dialog h3 {
+  margin: 0;
+  color: #333;
+}
+
+.error-message {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.settings-dialog label {
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+}
+
+.settings-dialog input,
+.settings-dialog select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.settings-dialog input.invalid {
+  border-color: #e74c3c;
+  background-color: #fdf2f2;
+}
+
+.validation-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: -3px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.settings-dialog button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.save-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.save-btn:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+.cancel-btn {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #7f8c8d;
+}
+
+.test-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.test-btn:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.settings-dialog button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 新增样式 */
+.model-description {
+  color: #666;
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+.input-description {
+  color: #777;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.custom-model-section {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.custom-model-section h4 {
+  margin: 0 0 15px 0;
+  color: #495057;
+  font-size: 16px;
+}
+
+.settings-dialog optgroup {
+  font-weight: bold;
+  color: #333;
+}
+
+.settings-dialog option {
+  font-weight: normal;
+  color: #555;
+}
