@@ -41,9 +41,9 @@ export function useTypstCompiler() {
       await init()
     }
     try {
-      // 添加演示文稿样式配置
+      // 添加演示文稿样式配置，使用系统默认字体避免网络请求
       const sourceWithSlideStyle = `// 演示文稿样式配置
-#set text(font: ("Times New Roman", "SimSun", "Source Han Sans"), size: 20pt)
+#set text(size: 20pt)
 #set page(
   paper: "presentation-16-9",
   margin: (x: 40pt, y: 40pt),

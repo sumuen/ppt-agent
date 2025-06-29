@@ -37,6 +37,13 @@ jobs:
     - name: Build
       run: npm run build
       
+    - name: List dist contents
+      run: |
+        echo "Contents of dist directory:"
+        ls -la ./dist/
+        echo "WASM files in dist:"
+        find ./dist/ -name "*.wasm" -type f
+      
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:

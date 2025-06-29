@@ -16,10 +16,17 @@ export default defineConfig({
         main: 'index.html',
       },
       output: {
-        assetFileNames: 'assets/[name].[ext]',
+        assetFileNames: (assetInfo) => {
+          // 保持 WASM 文件在根目录
+          if (assetInfo.name && assetInfo.name.endsWith('.wasm')) {
+            return '[name].[ext]'
+          }
+          return 'assets/[name].[ext]'
+        },
         chunkFileNames: 'assets/[name].[hash].js',
         entryFileNames: 'assets/[name].[hash].js',
       },
     },
+    assetsInlineLimit: 0, // 防止 WASM 文件被内联
   },
 })
