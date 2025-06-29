@@ -16,12 +16,15 @@ export function useTypstCompiler() {
     isInitializing = true
     
     try {
+      // 获取当前页面的 base URL，确保 WASM 文件路径正确
+      const baseUrl = document.baseURI.endsWith('/') ? document.baseURI : document.baseURI + '/'
+      
       $typst.setCompilerInitOptions({
-        getModule: () => '/typst_ts_web_compiler_bg.wasm',
+        getModule: () => `${baseUrl}typst_ts_web_compiler_bg.wasm`,
       })
 
       $typst.setRendererInitOptions({
-        getModule: () => '/typst_ts_renderer_bg.wasm',
+        getModule: () => `${baseUrl}typst_ts_renderer_bg.wasm`,
       })
 
       isInitialized = true
